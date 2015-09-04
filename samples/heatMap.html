@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>amMap example</title>
+        
+        <link rel="stylesheet" href="../ammap/ammap.css" type="text/css">        
+        <script src="../ammap/ammap.js" type="text/javascript"></script>
+        <!-- map file should be included after ammap.js -->
+		<script src="../ammap/maps/js/usa_low.js" type="text/javascript"></script>    
+        <script type="text/javascript">
+			var map;
+			
+			AmCharts.ready(function() {
+			    map = new AmCharts.AmMap();
+			    map.pathToImages = "../ammap/images/";
+			    //map.panEventsEnabled = true; // this line enables pinch-zooming and dragging on touch devices
+			    
+			    map.colorSteps = 10;
+			    map.balloon.color = "#000000";
+			    var dataProvider = {
+			        mapVar: AmCharts.maps.usaLow,
+			
+			        areas: [
+			            {
+			            id: "US_AL",
+			            value: 4447100},
+			        {
+			            id: "US_AK",
+			            value: 626932},
+			        {
+			            id: "US_AZ",
+			            value: 5130632},
+			        {
+			            id: "US_AR",
+			            value: 2673400},
+			        {
+			            id: "US_CA",
+			            value: 33871648},
+			        {
+			            id: "US_CO",
+			            value: 4301261},
+			        {
+			            id: "US_CT",
+			            value: 3405565},
+			        {
+			            id: "US_DE",
+			            value: 783600},
+			        {
+			            id: "US_FL",
+			            value: 15982378},
+			        {
+			            id: "US_GA",
+			            value: 8186453},
+			        {
+			            id: "US_HI",
+			            value: 1211537},
+			        {
+			            id: "US_ID",
+			            value: 1293953},
+			        {
+			            id: "US_IL",
+			            value: 12419293},
+			        {
+			            id: "US_IN",
+			            value: 6080485},
+			        {
+			            id: "US_IA",
+			            value: 2926324},
+			        {
+			            id: "US_KS",
+			            value: 2688418},
+			        {
+			            id: "US_KY",
+			            value: 4041769},
+			        {
+			            id: "US_LA",
+			            value: 4468976},
+			        {
+			            id: "US_ME",
+			            value: 1274923},
+			        {
+			            id: "US_MD",
+			            value: 5296486},
+			        {
+			            id: "US_MA",
+			            value: 6349097},
+			        {
+			            id: "US_MI",
+			            value: 9938444},
+			        {
+			            id: "US_MN",
+			            value: 4919479},
+			        {
+			            id: "US_MS",
+			            value: 2844658},
+			        {
+			            id: "US_MO",
+			            value: 5595211},
+			        {
+			            id: "US_MT",
+			            value: 902195},
+			        {
+			            id: "US_NE",
+			            value: 1711263},
+			        {
+			            id: "US_NV",
+			            value: 1998257},
+			        {
+			            id: "US_NH",
+			            value: 1235786},
+			        {
+			            id: "US_NJ",
+			            value: 8414350},
+			        {
+			            id: "US_NM",
+			            value: 1819046},
+			        {
+			            id: "US_NY",
+			            value: 18976457},
+			        {
+			            id: "US_NC",
+			            value: 8049313},
+			        {
+			            id: "US_ND",
+			            value: 642200},
+			        {
+			            id: "US_OH",
+			            value: 11353140},
+			        {
+			            id: "US_OK",
+			            value: 3450654},
+			        {
+			            id: "US_OR",
+			            value: 3421399},
+			        {
+			            id: "US_PA",
+			            value: 12281054},
+			        {
+			            id: "US_RI",
+			            value: 1048319},
+			        {
+			            id: "US_SC",
+			            value: 4012012},
+			        {
+			            id: "US_SD",
+			            value: 754844},
+			        {
+			            id: "US_TN",
+			            value: 5689283},
+			        {
+			            id: "US_TX",
+			            value: 20851820},
+			        {
+			            id: "US_UT",
+			            value: 2233169},
+			        {
+			            id: "US_VT",
+			            value: 608827},
+			        {
+			            id: "US_VA",
+			            value: 7078515},
+			        {
+			            id: "US_WA",
+			            value: 5894121},
+			        {
+			            id: "US_WV",
+			            value: 1808344},
+			        {
+			            id: "US_WI",
+			            value: 5363675},
+			        {
+			            id: "US_WY",
+			            value: 493782}]
+			    };
+			
+			    map.areasSettings = {
+			        autoZoom: true
+			    };
+			    map.dataProvider = dataProvider;
+			
+			    var valueLegend = new AmCharts.ValueLegend();
+			    valueLegend.right = 10;
+			    valueLegend.minValue = "little";
+			    valueLegend.maxValue = "a lot!";
+			    map.valueLegend = valueLegend;
+			
+			    map.write("mapdiv");
+			});
+		</script>
+    </head>
+    
+    <body>
+        <div id="mapdiv" style="width: 800px; background-color:#EEEEEE; height: 500px;"></div>
+    </body>
+
+</html>
