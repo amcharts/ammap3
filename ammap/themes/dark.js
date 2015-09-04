@@ -126,9 +126,15 @@ AmCharts.themes.dark = {
 		buttonRollOverColor: "#3c5bdc",
 		buttonFillColor: "#f15135",
 		buttonFillAlpha: 0.8,
-		buttonBorderColor: "#FFFFFF",
 		gridBackgroundColor: "#FFFFFF",
-		gridAlpha: 0.8
+		buttonBorderAlpha:0,
+		buttonCornerRadius:2,
+		gridAlpha:0.5,
+		gridBackgroundColor:"#FFFFFF",
+		homeIconFile:"homeIconWhite.gif",
+		buttonIconAlpha:0.6,
+		gridAlpha: 0.2,
+		buttonSize:20
 	},
 
 	SmallMap: {

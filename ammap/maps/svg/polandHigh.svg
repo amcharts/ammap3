@@ -13,7 +13,7 @@
 			}
 		</style>
 
-		<amcharts:ammap projection="mercator" leftLongitude="14.122232" topLatitude="54.834941" rightLongitude="24.149724" bottomLatitude="24.149724"></amcharts:ammap>
+		<amcharts:ammap projection="mercator" leftLongitude="14.122232" topLatitude="54.834941" rightLongitude="24.149724" bottomLatitude="49.002699"></amcharts:ammap>
 
 		<!-- All areas are listed in the line below. You can use this list in your script. -->
 		<!--{id:"PL-DS"},{id:"PL-KP"},{id:"PL-LD"},{id:"PL-LU"},{id:"PL-LB"},{id:"PL-MA"},{id:"PL-MZ"},{id:"PL-OP"},{id:"PL-PK"},{id:"PL-PD"},{id:"PL-PM"},{id:"PL-SL"},{id:"PL-SK"},{id:"PL-WN"},{id:"PL-WP"},{id:"PL-ZP"}-->
