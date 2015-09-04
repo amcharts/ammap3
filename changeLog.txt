@@ -1,3 +1,9 @@
+3.0.6
+
+Object's position accuracy increased.
+Objects list wasn't cleared when drill-down map was used.
+zoomCompleted event wasn't always fired.
+
 3.0.5
 
 showDescriptionOnHover property added to AmMap class. If you set it to true,
