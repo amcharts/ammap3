@@ -1,4 +1,4 @@
-﻿// (c) ammap.com | SVG (in JSON format) map of Nicaraugua - High
+﻿// (c) ammap.com | SVG (in JSON format) map of Nicaragua - High
 // areas: {id:"NI-AN"},{id:"NI-AS"},{id:"NI-BO"},{id:"NI-CA"},{id:"NI-CI"},{id:"NI-CO"},{id:"NI-ES"},{id:"NI-GR"},{id:"NI-JI"},{id:"NI-LE"},{id:"NI-MD"},{id:"NI-MN"},{id:"NI-MS"},{id:"NI-MT"},{id:"NI-NS"},{id:"NI-RI"},{id:"NI-SJ"}
 AmCharts.maps.nicaraguaHigh={
 	"svg": {
