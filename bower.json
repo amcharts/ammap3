@@ -1,0 +1,24 @@
+{
+  "name": "ammap3",
+  "authors": [
+    "amCharts <contact@amcharts.com>"
+  ],
+  "description": "JavaScript Maps V3",
+  "main": [
+    "js/ammap.js"
+  ],
+  "keywords": [
+    "amcharts",
+    "maps",
+    "javascript"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "Custom",
+  "homepage": "http://www.amcharts.com/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amcharts/ammap3.git"
+  }
+}
