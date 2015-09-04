@@ -1,3 +1,30 @@
+3.0.5
+
+showDescriptionOnHover property added to AmMap class. If you set it to true,
+description window instead of a balloon will be displayed when hovering MapObject.
+
+descriptionWindowX, descriptionWindowY, descriptionWindowWidth and
+descriptionWindowHeight properties added to ImagesSettings, AreasSettings and
+LinesSettings. Allows you to set these properties for all objects of the type.
+
+HTML can be displayed in description window.
+
+Map wasn't correctly resized if container of a map changed and map.invalidateSize()
+method was called.
+
+Some other minor bugs fixed.
+
+New maps were added.
+
+3.0.4
+
+Some minor bugs fixed
+
+3.0.3
+
+Bug fixes:
+Blurry lines on all browsers fixed
+
 3.0.2
 numberFormatter was not working when formatting values in balloon.
 problems with window resizing fixed.

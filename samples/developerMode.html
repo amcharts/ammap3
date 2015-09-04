@@ -24,9 +24,12 @@
 			    
 			    map.balloon.color = "#000000";
 			
-			    var dataProvider = {
-			        mapVar: AmCharts.maps.worldLow
-				}
+				var icon= "M21.25,8.375V28h6.5V8.375H21.25zM12.25,28h6.5V4.125h-6.5V28zM3.25,28h6.5V12.625h-6.5V28z";       
+				       
+				var dataProvider = {
+				    mapVar: AmCharts.maps.worldLow,
+				    images:[{latitude:40.3951, longitude:-73.5619, svgPath:icon, color:"#CC0000", scale:0.5, label:"New York", labelShiftY:2, zoomLevel:5, title:"New York", description:"New York is the most populous city in the United States and the center of the New York Metropolitan Area, one of the most populous metropolitan areas in the world."}]                    
+				}; 
 			
 			    map.dataProvider = dataProvider;
 			

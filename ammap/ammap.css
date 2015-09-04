@@ -17,7 +17,7 @@
    border-color:#DADADA;
    border-width:1px;
    color:#000000;
-   padding:8px; 
+   padding:8px;  
 }
 
 .ammapDescriptionTitle
@@ -69,4 +69,8 @@
     display:block;
 }
 
+.ammapDescriptionText 
+{
+	overflow: auto; 
+}
 
