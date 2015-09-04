@@ -6,6 +6,7 @@
         <title>amMap examples</title>
 
         <link rel="stylesheet" href="../ammap/ammap.css" type="text/css">
+        <link rel="stylesheet" href="style.css" type="text/css">
         <script src="../ammap/ammap.js" type="text/javascript"></script>
         <!-- map file should be included after ammap.js -->
 		<script src="../ammap/maps/js/worldLow.js" type="text/javascript"></script>
@@ -14,10 +15,8 @@
 		<!-- Note, the exporting will work only if you view the file from web server -->
 		<!-- Exporting to image works on all modern browsers except IE9 (IE10 works fine) -->
 		<!--[if (!IE) | (gte IE 10)]> -->
-        <script src="../ammap/exporting/amexport.js" type="text/javascript"></script>
-        <script src="../ammap/exporting/rgbcolor.js" type="text/javascript"></script>
-        <script src="../ammap/exporting/canvg.js" type="text/javascript"></script>
-        <script src="../ammap/exporting/filesaver.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../ammap/plugins/export/export.js"></script>
+        <link  type="text/css" href="../ammap/plugins/export/export.css" rel="stylesheet">
         <!-- <![endif]-->
 		<script type="text/javascript">
 
@@ -277,15 +276,21 @@
 				backgroundZoomsToTop: true,
 				linesAboveImages: true,
 
-				amExport: {}
+                "export": {
+                    "enabled": true,
+                    "libs": {
+                        "path": "../ammap/plugins/export/libs/"
+                    }
+                }
 			});
 
         </script>
     </head>
 
     <body>
-		<span style="font-family: Arial; font-size: 10; color: #CC0000;">
-			<p>Warning! Exporting to image works only if you view this file from web server. Exporting works with all modern browsers except IE9 (works fine with IE10)</p>
+		<span style="font-size: 10; color: #CC0000;">
+			<p>Warning! Exporting to image works only if you view this file from web server. Exporting works with all modern browsers except IE9 (works fine with IE10).</p>
+            <p>Since version 3.14 chart export is done using dedicated plugin, located in amCharts/plugins/export folder. Please refer to bundled examples and README.md file for more information.</p>
 		</span>
         <div id="mapdiv" style="width: 100%; background-color:#eeeeee; height: 500px;"></div>
     </body>
