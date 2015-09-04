@@ -1,119 +1,47 @@
 AmCharts.AmExport = AmCharts.Class({
 	construct: function(chart, cfg) {
-		var _this = this;
-		_this.DEBUG = false;
-		_this.chart = chart;
-		_this.canvas = null;
-		_this.svgs = [];
-		_this.userCFG = cfg;
-
-		_this.buttonIcon = 'export.png';
-		_this.exportPNG = true;
-		_this.exportPDF = false;
-		_this.exportJPG = false;
-		_this.exportSVG = false;
-		//_this.left;
-		_this.right = 0;
-		//_this.bottom;
-		_this.top = 0;
-		//_this.color;
-		_this.buttonRollOverColor = "#EFEFEF";
-		//_this.buttonColor = "#FFFFFF";
-		//_this.buttonRollOverAlpha = 0.5;
-		_this.textRollOverColor = "#CC0000";
-		_this.buttonTitle = "Save chart as an image";
-		_this.buttonAlpha = 0.75;
-		_this.imageFileName = "amChart";
-		_this.imageBackgroundColor = "#FFFFFF";
-	},
-
-	toCoordinate:function(value){
-		if(value === undefined){
-			return "auto";
-		}
-		if(String(value).indexOf("%") != -1){
-			return value;
-		}
-		else{
-			return value + "px";
-		}
-	},
-
-	init: function(){
-		var _this = this;
-
-		var formats = [];
-		if (_this.exportPNG) {
-			formats.push("png");
-		}
-		if (_this.exportPDF) {
-			formats.push("pdf");
-		}
-		if (_this.exportJPG) {
-			formats.push("jpg");
-		}
-		if (_this.exportSVG) {
-			formats.push("svg");
-		}
-
-		var menuItems = [];
-		if(formats.length == 1){
-			var format = formats[0];
-			menuItems.push({format:format, iconTitle:_this.buttonTitle, icon:_this.chart.pathToImages + _this.buttonIcon})
-		}
-		else if(formats.length > 1){
-			var subItems = [];
-			for(var i = 0; i < formats.length; i++){
-				subItems.push({format:formats[i], title:formats[i].toUpperCase()});
-			}
-			menuItems.push({onclick: function() {}, icon:_this.chart.pathToImages + _this.buttonIcon, items:subItems})
-		}
-
-
-		var color = _this.color;
-		if(color === undefined){
-			color = _this.chart.color;
-		}
-
-		var buttonColor = _this.buttonColor;
-		if(buttonColor === undefined){
-			buttonColor = "transparent";
-		}
-
-
-		_this.cfg = {
-			menuTop: _this.toCoordinate(_this.top),
-			menuLeft: _this.toCoordinate(_this.left),
-			menuRight: _this.toCoordinate(_this.right),
-			menuBottom: _this.toCoordinate(_this.bottom),
-			menuItems: menuItems,
-			menuItemStyle: {
-				backgroundColor: buttonColor,
-				opacity:_this.buttonAlpha,
-				rollOverBackgroundColor: _this.buttonRollOverColor,
-				color: color,
-				rollOverColor: _this.textRollOverColor,
-				paddingTop: '6px',
-				paddingRight: '6px',
-				paddingBottom: '6px',
-				paddingLeft: '6px',
-				marginTop: '0px',
-				marginRight: '0px',
-				marginBottom: '0px',
-				marginLeft: '0px',
-				textAlign: 'left',
-				textDecoration: 'none',
-				fontFamily: _this.chart.fontFamily,
-				fontSize: _this.chart.fontSize + 'px'
+		var _this		= this;
+		_this.DEBUG		= false;
+		_this.chart		= chart;
+		_this.canvas	= null;
+		_this.svgs		= [];
+		_this.cfg		= {
+			menuTop					: 'auto',
+			menuLeft				: 'auto',
+			menuRight				: '0px',
+			menuBottom				: '0px',
+			menuItems				: [{
+				textAlign				: 'center',
+				icon					: _this.chart.pathToImages + 'export.png',
+				iconTitle				: 'Save chart as an image',
+				format					: 'png'
+			}],
+			menuItemStyle			: {
+			backgroundColor			: 'transparent',
+			rollOverBackgroundColor	: '#EFEFEF',
+			color					: '#000000',
+			rollOverColor			: '#CC0000',
+			paddingTop				: '6px',
+			paddingRight			: '6px',
+			paddingBottom			: '6px',
+			paddingLeft				: '6px',
+			marginTop				: '0px',
+			marginRight				: '0px',
+			marginBottom			: '0px',
+			marginLeft				: '0px',
+			textAlign				: 'left',
+			textDecoration			: 'none',
+			fontFamily				: _this.chart.fontFamily,
+			fontSize				: _this.chart.fontSize + 'px'
 			},
-			menuItemOutput: {
-				backgroundColor: _this.imageBackgroundColor,
-				fileName: _this.imageFileName,
-				format: 'png',
-				output: 'dataurlnewwindow',
-				render: 'browser',
-				dpi: 90,
-				onclick: function(instance, config, event) {
+			menuItemOutput			: {
+				backgroundColor			: '#FFFFFF',
+				fileName				: 'amChart',
+				format					: 'png',
+				output					: 'dataurlnewwindow',
+				render					: 'browser',
+				dpi						: 90,
+				onclick					: function(instance, config, event) {
 					event.preventDefault();
 					// Polify SVG; needs to wait
 					instance.polifySVG();
@@ -122,7 +50,6 @@ AmCharts.AmExport = AmCharts.Class({
 			},
 			removeImagery: false
 		};
-
 		_this.processing = {
 			buffer: [],
 			drawn: 0,
@@ -141,7 +68,6 @@ AmCharts.AmExport = AmCharts.Class({
 		}
 
 		// Merge given configs
-		var cfg = _this.userCFG;
 		if (cfg) {
 			cfg.menuItemOutput = AmCharts.extend(_this.cfg.menuItemOutput, cfg.menuItemOutput || {});
 			cfg.menuItemStyle = AmCharts.extend(_this.cfg.menuItemStyle, cfg.menuItemStyle || {});
@@ -161,7 +87,6 @@ AmCharts.AmExport = AmCharts.Class({
 			window.AmExport = _this;
 		}
 	},
-
 
 	/*
 	Simple log function for internal purpose
@@ -420,19 +345,19 @@ AmCharts.AmExport = AmCharts.Class({
 
 			for (var i = 0; i < items.length; i++) {
 
-				if (_this.cfg.removeImagery) {
+				if ( _this.cfg.removeImagery ) {
 					items[i].parentNode.removeChild(items[i]);
 
 				} else {
-					var image = document.createElement('img');
-					var canvas = document.createElement('canvas');
-					var ctx = canvas.getContext('2d');
+					var image		= document.createElement('img');
+					var canvas		= document.createElement('canvas');
+					var ctx			= canvas.getContext('2d');
 
-					canvas.width = items[i].getAttribute('width');
-					canvas.height = items[i].getAttribute('height');
-					image.src = items[i].getAttribute('xlink:href');
-					image.width = items[i].getAttribute('width');
-					image.height = items[i].getAttribute('height');
+					canvas.width	= items[i].getAttribute('width');
+					canvas.height	= items[i].getAttribute('height');
+					image.src		= items[i].getAttribute('xlink:href');
+					image.width		= items[i].getAttribute('width');
+					image.height	= items[i].getAttribute('height');
 
 					try {
 						ctx.drawImage(image, 0, 0, image.width, image.height);
@@ -457,18 +382,19 @@ AmCharts.AmExport = AmCharts.Class({
 		for (var i = 0; i < svgs.length; i++) {
 			var parent = svgs[i].parentNode;
 
-			// Put some attrs to it; fixed 20/03/14 xmlns is required to produce a valid svg file
-			if (AmCharts.IEversion == 0) {
-				svgs[i].setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-				//svgs[i].setAttribute('xmlns:xlink','http://www.w3.org/1999/xlink');
+			// Put some attrs to it
+			/*
+			if ( !AmCharts.isIE ) {
+				svgs[i].setAttribute('xmlns','http://www.w3.org/2000/svg');
+				svgs[i].setAttribute('xmlns:xlink','http://www.w3.org/1999/xlink');
 			}
-			//svgs[i].setAttribute('width',parent.style.width);
-			//svgs[i].setAttribute('height',parent.style.height);
+			svgs[i].setAttribute('width',parent.style.width);
+			svgs[i].setAttribute('height',parent.style.height);
+			*/
 
-			// DEBUG
 			if (_this.DEBUG == 10) {
 				_this.log('POLIFIED', svgs[i]);
-			}
+			} // DEBUG
 
 			// Force link adaption
 			recursiveChange(svgs[i], 'pattern');
@@ -513,14 +439,9 @@ AmCharts.AmExport = AmCharts.Class({
 				svgY = Number(parent.style.top.slice(0, -2));
 			tmp = AmCharts.extend({}, offset);
 
-			// Overtake parent position if given; fixed 20/03/14 distinguish between relativ and others
-			if (parent.style.position == 'relative') {
-				offset.x = svgX ? svgX : offset.x;
-				offset.y = svgY ? svgY : offset.y;
-			} else {
-				offset.x = svgX;
-				offset.y = svgY;
-			}
+			// Overtake parent position if givwn
+			offset.x = svgX ? svgX : offset.x;
+			offset.y = svgY ? svgY : offset.y;
 
 			_this.processing.buffer.push([svgs[i], AmCharts.extend({}, offset)]);
 
@@ -553,7 +474,7 @@ AmCharts.AmExport = AmCharts.Class({
 		canvas.height = _this.chart.divRealHeight;
 
 		// Set given background; jpeg default
-		if (cfg.backgroundColor || cfg.format == 'image/jpeg') {
+		if (cfg.backgroundColor || format == 'image/jpeg') {
 			context.fillStyle = cfg.backgroundColor || '#FFFFFF';
 			context.fillRect(0, 0, canvas.width, canvas.height);
 		}
@@ -733,8 +654,7 @@ AmCharts.AmExport = AmCharts.Class({
 		}
 
 		// Style wrapper; Push into chart div
-		div.setAttribute('style', 'width:39px; height:28px; position: absolute;top:' + _this.cfg.menuTop + ';right:' + _this.cfg.menuRight + ';bottom:' + _this.cfg.menuBottom + ';left:' + _this.cfg.menuLeft + ';box-shadow:0px 0px 1px 0px rgba(0,0,0,0);');
-		div.setAttribute('class', 'amExportButton');
+		div.setAttribute('style', 'position: absolute;top:' + _this.cfg.menuTop + ';right:' + _this.cfg.menuRight + ';bottom:' + _this.cfg.menuBottom + ';left:' + _this.cfg.menuLeft + ';box-shadow:0px 0px 1px 0px rgba(0,0,0,0);');
 		div.appendChild(createList(_this.cfg.menuItems));
 		//_this.chart.div.style.position = 'relative';
 		_this.chart.containerDiv.appendChild(div);

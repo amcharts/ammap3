@@ -8,7 +8,7 @@ AmCharts.maps.polandHigh={
 				"leftLongitude":"14.122232",
 				"topLatitude":"54.834941",
 				"rightLongitude":"24.149724",
-				"bottomLatitude":"49.002699"
+				"bottomLatitude":"24.149724"
 			}
 		},
 		"g":{
