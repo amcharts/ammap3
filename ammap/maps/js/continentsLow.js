@@ -5,10 +5,10 @@ AmCharts.maps.continentsLow={
 		"defs": {
 			"amcharts:ammap": {
 				"projection":"mercator",
-				"leftLongitude":"-169.522279",
-				"topLatitude":"83.646363",
-				"rightLongitude":"190.122401",
-				"bottomLatitude":"-55.621433"
+				"leftLongitude":"-169.6",
+				"topLatitude":"83.68",
+				"rightLongitude":"190.25",
+				"bottomLatitude":"-55.55"
 			}
 		},
 		"g":{

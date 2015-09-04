@@ -10,7 +10,7 @@
         <!-- map file should be included after ammap.js -->
 		<script src="../ammap/maps/js/worldLow.js" type="text/javascript"></script>
 
-		<script type="text/javascript">
+		<script>
 			var map;
 
 			// svg path for target icon
@@ -18,7 +18,7 @@
 
 			AmCharts.ready(function() {
 			    map = new AmCharts.AmMap();
-			    map.pathToImages = "../ammap/images/";
+			    map.path = "../ammap/";
 
 			    map.imagesSettings = {
 			        rollOverColor: "#CC0000",
@@ -26,6 +26,10 @@
 			        selectedScale: 3,
 			        selectedColor: "#CC0000"
 			    };
+
+                      map.areasSettings = {
+                        outlineThickness:0.1
+                      };
 
 			    var dataProvider = {
 			        mapVar: AmCharts.maps.worldLow,
@@ -92,7 +96,7 @@
                         {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Jakarta", latitude:-6.1862, longitude:106.8063},
                         {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Teheran", latitude:35.7061, longitude:51.4358},
                         {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Baghdad", latitude:33.3157, longitude:44.3922},
-                        {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Jerusalem", latitude:31.7857, longitude:35.2007},
+                        {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Jerusalem", latitude:31.76, longitude:35.17},
                         {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Tokyo", latitude:35.6785, longitude:139.6823},
                         {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Amman", latitude:31.9394, longitude:35.9349},
                         {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Astana", latitude:51.1796, longitude:71.4475},

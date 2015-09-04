@@ -13,8 +13,7 @@
 			}
 		</style>
 
-		<amcharts:ammap projection="mercator" leftLongitude="-169.522279" topLatitude="83.646363" rightLongitude="190.122401" bottomLatitude="-55.621433"></amcharts:ammap>
-
+		<amcharts:ammap projection="mercator" leftLongitude="-169.6" topLatitude="83.68" rightLongitude="190.25" bottomLatitude="-55.55"></amcharts:ammap>
 		<!-- All areas are listed in the line below. You can use this list in your script. -->
 		<!--{id:"southAmerica"},{id:"northAmerica"},{id:"asia"},{id:"europe"},{id:"australia"},{id:"africa"}-->
 

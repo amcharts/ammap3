@@ -18,7 +18,7 @@
         <script src="../ammap/themes/black.js" type="text/javascript"></script>
         <script src="../ammap/themes/chalk.js" type="text/javascript"></script>
 
-        <script type="text/javascript">
+        <script>
 
          // in order to set theme for a chart, all you need to include theme file
          // located in amcharts/themes folder and set theme property for the chart.
@@ -45,7 +45,7 @@
         	map = AmCharts.makeChart("mapdiv", {
         		type: "map",
         		theme: theme,
-        		pathToImages: "../ammap/images/",
+        		path: "../ammap/",
                 creditsPosition: "top-right",
 
         		dataProvider: {

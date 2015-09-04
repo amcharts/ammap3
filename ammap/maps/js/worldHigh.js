@@ -5,10 +5,10 @@ AmCharts.maps.worldHigh={
 		"defs": {
 			"amcharts:ammap": {
 				"projection":"mercator",
-				"leftLongitude":"-169.110266",
-				"topLatitude":"83.600842",
-				"rightLongitude":"190.486279",
-				"bottomLatitude":"-58.508473"
+				"leftLongitude":"-169.01",
+				"topLatitude":"83.62",
+				"rightLongitude":"190.50",
+				"bottomLatitude":"-58.38"
 			}
 		},
 		"g":{
