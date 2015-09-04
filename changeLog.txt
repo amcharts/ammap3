@@ -1,1 +1,9 @@
+3.0.2
+numberFormatter was not working when formatting values in balloon.
+problems with window resizing fixed.
+some other problems fixed
+
+3.0.1
+Some minor bugs fixed
+
 3.0 is Out!
