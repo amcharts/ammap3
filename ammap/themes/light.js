@@ -1,5 +1,7 @@
 AmCharts.themes.light = {
 
+	themeName:"light",
+
 	AmChart: {
 		color: "#000000"
 	},
