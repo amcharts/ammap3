@@ -3,7 +3,7 @@ AmCharts.themes.dark = {
 	themeName: "dark",
 
 	AmChart: {
-		color: "#e7e7e7"
+		color: "#e7e7e7", backgroundColor: "#282828"
 	},
 
 	AmCoordinateChart: {
@@ -123,18 +123,8 @@ AmCharts.themes.dark = {
 	},
 
 	ZoomControl: {
-		buttonRollOverColor: "#3c5bdc",
-		buttonFillColor: "#f15135",
-		buttonFillAlpha: 0.8,
-		gridBackgroundColor: "#FFFFFF",
-		buttonBorderAlpha:0,
-		buttonCornerRadius:2,
-		gridAlpha:0.5,
-		gridBackgroundColor:"#FFFFFF",
-		homeIconFile:"homeIconWhite.gif",
-		buttonIconAlpha:0.6,
-		gridAlpha: 0.2,
-		buttonSize:20
+		buttonFillAlpha:0.7,
+		buttonIconColor:"#494949"
 	},
 
 	SmallMap: {
