@@ -1,3 +1,17 @@
+3.0.9
+
+AmCharts.clear method added. Call this method if you want completely to remove all charts from a page.
+
+Memory leak fixed.
+
+3.0.8
+
+new maps were added, some maps were updated.
+
+3.0.7
+
+balloon could be wrongly positioned in marginTop style was added directly to <html> element.
+
 3.0.6
 
 Object's position accuracy increased.

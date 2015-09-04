@@ -1,6 +1,6 @@
 ﻿// (c) ammap.com | SVG (in JSON format) map of France
 // areas: {id:"FR_A"},{id:"FR_B"},{id:"FR_C"},{id:"FR_D"},{id:"FR_E"},{id:"FR_F"},{id:"FR_G"},{id:"FR_H"},{id:"FR_I"},{id:"FR_J"},{id:"FR_K"},{id:"FR_L"},{id:"FR_M"},{id:"FR_N"},{id:"FR_O"},{id:"FR_P"},{id:"FR_Q"},{id:"FR_R"},{id:"FR_S"},{id:"FR_T"},{id:"FR_U"},{id:"FR_V"}
-AmCharts.maps.franceHigh={
+AmCharts.maps.franceRegionsHigh={
 	"svg": {
 		"defs": {
 			"amcharts:ammap": {
