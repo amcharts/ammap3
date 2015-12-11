@@ -6,9 +6,9 @@ AmCharts.maps.indiaLow={
 			"amcharts:ammap": {
 				"projection":"mercator",
 				"leftLongitude":"68.189980",
-				"topLatitude":"35.53798",
-				"rightLongitude":"97.418892",
-				"bottomLatitude":"6.748288"
+				"topLatitude":"37.053798",
+				"rightLongitude":"97.419638",
+				"bottomLatitude":"6.746236"
 			}
 		},
 		"g":{

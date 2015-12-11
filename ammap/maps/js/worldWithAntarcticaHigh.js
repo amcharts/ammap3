@@ -1080,7 +1080,7 @@ AmCharts.maps.worldWithAntarcticaHigh={
 				},
 				{
 					"id":"SX",
-					"title":"Saint Martin",
+					"title":"Sint Maarten",
 					"d":"M298.545,411.432L298.859,411.432L298.856,411.501L298.826,411.578L298.637,411.513L298.541,411.445z"
 				},
 				{
