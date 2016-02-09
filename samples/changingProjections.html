@@ -1850,7 +1850,6 @@
 			// build map
 			AmCharts.ready(function() {
 				map = new AmCharts.AmMap();
-				map.projection = "winkel3";
 
 				map.addTitle("Population of the World in 2011", 14);
 				map.addTitle("source: Gapminder", 11);
@@ -1932,9 +1931,20 @@
 			});
 		</script>
     </head>
-
+	<link rel="stylesheet" href="style.css" type="text/css">
     <body style="background-color:#222222;">
         <div id="mapdiv" style="width: 100%; height: 600px;"></div>
+        <br>
+        <div style="text-align:center; font-size:14px">
+	        <a href="#" onclick="map.setProjection('winkel3')">Winkel 3</a> |
+	        <a href="#" onclick="map.setProjection('eckert3')">Eckert 3</a> |
+	        <a href="#" onclick="map.setProjection('eckert5')">Eckert 5</a> |
+	        <a href="#" onclick="map.setProjection('eckert6')">Eckert 6</a> |
+	        <a href="#" onclick="map.setProjection('miller')">Miller</a> |
+	        <a href="#" onclick="map.setProjection('equirectangular')">Equirectangular</a> |
+	        <a href="#" onclick="map.setProjection('mercator')">Mercator</a>
+    	</div>
+
     </body>
 
 </html>
