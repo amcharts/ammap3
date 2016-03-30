@@ -8,7 +8,7 @@ AmCharts.maps.syriaHigh={
 				"leftLongitude":"35.715460",
 				"topLatitude":"37.319524",
 				"rightLongitude":"42.385256",
-				"bottomLatitude":"42.385256"
+				"bottomLatitude":"32.310278"
 			}
 		},
 		"g":{
