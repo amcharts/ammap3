@@ -2,7 +2,7 @@
 Plugin Name: amCharts Export
 Description: Adds export capabilities to amCharts products
 Author: Benjamin Maertz, amCharts
-Version: 1.4.41
+Version: 1.4.42
 Author URI: http://www.amcharts.com/
 
 Copyright 2016 amCharts
@@ -71,7 +71,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 		var _timer;
 		var _this = {
 			name: "export",
-			version: "1.4.41",
+			version: "1.4.42",
 			libs: {
 				async: true,
 				autoLoad: true,
@@ -2045,6 +2045,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 				}, options || {} );
 				var data = _this.setup.canvas;
 
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2107,6 +2108,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					} );
 				}
 
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2124,6 +2126,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 				cfg.format = cfg.format.toLowerCase();
 				var data = _this.setup.fabric.toDataURL( cfg );
 
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2140,6 +2143,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 				}, options || {} );
 				var data = _this.setup.fabric.toDataURL( cfg );
 
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2223,6 +2227,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					data = "data:image/svg+xml;base64," + btoa( data );
 				}
 
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2362,6 +2367,8 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					}
 					document.body.removeChild( data );
 					document.documentElement.scrollTop = document.body.scrollTop = scroll;
+
+					// TRIGGER CALLBACK
 					_this.handleCallback( callback, data, cfg );
 				}, cfg.delay );
 
@@ -2375,9 +2382,15 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 				var cfg = _this.deepMerge( {
 					dateFormat: _this.config.dateFormat || "dateObject",
 				}, options || {}, true );
-				cfg.data = cfg.data ? cfg.data : _this.getChartData( cfg );
-				var data = JSON.stringify( cfg.data, undefined, "\t" );
+				var data = {};
 
+				// GATHER DATA
+				cfg.data = cfg.data !== undefined ? cfg.data : _this.getChartData( cfg );
+
+				// STRINGIFY DATA
+				data = JSON.stringify( cfg.data, undefined, "\t" );
+
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2389,15 +2402,16 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 			toCSV: function( options, callback ) {
 				var row, col;
 				var cfg = _this.deepMerge( {
-					data: _this.getChartData( options ),
 					delimiter: ",",
 					quotes: true,
 					escape: true,
 					withHeader: true
 				}, options || {}, true );
+				var buffer = [];
 				var data = "";
-				var cols = [];
-				var buffer = _this.toArray( cfg );
+
+				// GATHER DATA
+				buffer = _this.toArray( cfg );
 
 				// MERGE
 				for ( row in buffer ) {
@@ -2406,6 +2420,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					}
 				}
 
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2421,13 +2436,15 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					withHeader: true,
 					stringify: false
 				}, options || {}, true );
+				var buffer = [];
 				var data = "";
 				var wb = {
 					SheetNames: [],
 					Sheets: {}
 				}
 
-				cfg.data = cfg.data ? cfg.data : _this.getChartData( cfg );
+				// GATHER DATA
+				buffer = _this.toArray( cfg );
 
 				function datenum( v, date1904 ) {
 					if ( date1904 ) v += 1462;
@@ -2479,7 +2496,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 				}
 
 				wb.SheetNames.push( cfg.name );
-				wb.Sheets[ cfg.name ] = sheet_from_array_of_arrays( _this.toArray( cfg ) );
+				wb.Sheets[ cfg.name ] = sheet_from_array_of_arrays( buffer );
 
 				data = XLSX.write( wb, {
 					bookType: "xlsx",
@@ -2489,6 +2506,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 
 				data = "data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64," + data;
 
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2500,16 +2518,33 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 			toArray: function( options, callback ) {
 				var row, col;
 				var cfg = _this.deepMerge( {
-					data: _this.getChartData( options ),
 					withHeader: false,
 					stringify: true,
 					escape: false,
-					quotes: false,
-					exportFields: _this.config.exportFields
+					quotes: false
 				}, options || {}, true );
 				var data = [];
 				var cols = [];
 				var buffer = [];
+				var _processData = _this.config.processData;
+
+				// RETRIEVES RIGHT FIELD ORDER OF TRANSLATED FIELDS
+				function processData( data, cfg ) {
+					var fields = cfg.exportFields || Object.keys( cfg.dataFieldsMap );
+
+					// WALKTHROUGH FIELDS
+					for ( col = 0; col < fields.length; col++ ) {
+						var key = fields[ col ];
+						var field = cfg.dataFieldsTitlesMap[ key ];
+						cols.push( field );
+					}
+
+					// TRIGGER GIVEN CALLBACK
+					if ( _processData ) {
+						return _this.handleCallback( _processData, data, cfg );
+					}
+					return data;
+				}
 
 				// STRING PROCESSOR
 				function enchant( value ) {
@@ -2526,14 +2561,11 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					return value;
 				}
 
-				// COLUMN ORDER
-				if ( cfg.exportFields ) {
-					cols = cfg.exportFields;
-				} else {
-					for ( col in cfg.data[ 0 ] ) {
-						cols.push( col );
-					}
-				}
+				// INVOKE PROCESS DATA
+				cfg.processData = processData;
+
+				// GET DATA
+				cfg.data = cfg.data !== undefined ? cfg.data : _this.getChartData( cfg );
 
 				// HEADER
 				if ( cfg.withHeader ) {
@@ -2568,6 +2600,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					}
 				}
 
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2650,6 +2683,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					return arr
 				}
 
+				// TRIGGER CALLBACK
 				_this.handleCallback( callback, data, cfg );
 
 				return data;
@@ -2983,6 +3017,7 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					dateFields: [],
 					dataFields: [],
 					dataFieldsMap: {},
+					dataFieldsTitlesMap: {},
 					dataDateFormat: _this.setup.chart.dataDateFormat,
 					dateFormat: _this.config.dateFormat || _this.setup.chart.dataDateFormat || "YYYY-MM-DD",
 					exportTitles: _this.config.exportTitles,
@@ -3021,6 +3056,8 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 							var dataField = cfg.dataFieldsMap[ uniqueField ];
 							var title = ( cfg.columnNames && cfg.columnNames[ uniqueField ] ) || cfg.titles[ uniqueField ] || uniqueField;
 							var value = cfg.data[ i1 ][ dataField ];
+
+							// SKIP NULL ONES
 							if ( value == null ) {
 								value = undefined;
 							}
@@ -3061,6 +3098,8 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 									value = AmCharts.formatDate( value, cfg.dateFormat );
 								}
 							}
+
+							cfg.dataFieldsTitlesMap[ dataField ] = title;
 
 							tmp[ title ] = value;
 						}

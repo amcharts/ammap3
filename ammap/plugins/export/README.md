@@ -1,6 +1,6 @@
 # amCharts Export
 
-Version: 1.4.41
+Version: 1.4.42
 
 
 ## Description
@@ -290,7 +290,7 @@ If you want to change the dataProvider when exporting to CSV, XLSX, or JSON, you
 
 ```
 "export": {
-  "processData": function (data) {
+  "processData": function (data, cfg) {
     return data.slice(1, -1);
   }
 }
@@ -971,6 +971,10 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 
 ## Changelog
+
+### 1.4.42
+* Fixed: `exportFields` issue in combination with `columnNames` or `exportTitles`
+* Added: `dataFieldsTitlesMap` into `processData` context to be able to trace back the translated keys against the data fields
 
 ### 1.4.41
 * Added: quote, escape option to `toArray` method
