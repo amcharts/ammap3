@@ -1,1 +1,1 @@
-AmCharts.mapTranslations.yo = {"Botswana":"BW","Nigeria":"NG","Tonga":"Tonga"}
+AmCharts.mapTranslations.yo = {"Botswana":"BW","Nigeria":"NG","Tonga":"Tonga"};

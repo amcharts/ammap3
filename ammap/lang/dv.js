@@ -1,1 +1,1 @@
-AmCharts.mapTranslations.dv = {"Maldives":"ދިވެހި ރާއްޖެ"}
+AmCharts.mapTranslations.dv = {"Maldives":"ދިވެހި ރާއްޖެ"};

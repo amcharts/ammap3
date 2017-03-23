@@ -1,1 +1,1 @@
-AmCharts.mapTranslations.sa = {"India":"भारतम्"}
+AmCharts.mapTranslations.sa = {"India":"भारतम्"};

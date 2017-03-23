@@ -1,1 +1,1 @@
-AmCharts.mapTranslations.kok = {"India":"भारत"}
+AmCharts.mapTranslations.kok = {"India":"भारत"};

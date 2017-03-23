@@ -1,1 +1,1 @@
-AmCharts.mapTranslations.tt = {"Russia":"Россия"}
+AmCharts.mapTranslations.tt = {"Russia":"Россия"};

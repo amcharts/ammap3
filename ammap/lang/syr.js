@@ -1,1 +1,1 @@
-AmCharts.mapTranslations.syr = {"Syria":"ܣܘܪܝܝܐ"}
+AmCharts.mapTranslations.syr = {"Syria":"ܣܘܪܝܝܐ"};

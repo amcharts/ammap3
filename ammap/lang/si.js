@@ -1,1 +1,1 @@
-AmCharts.mapTranslations.si = {"Sri Lanka":"ශ්‍රී ලංකාව"}
+AmCharts.mapTranslations.si = {"Sri Lanka":"ශ්‍රී ලංකාව"};

@@ -1,1 +1,1 @@
-AmCharts.mapTranslations.kl = {"Greenland":"Kalaallit Nunaat"}
+AmCharts.mapTranslations.kl = {"Greenland":"Kalaallit Nunaat"};

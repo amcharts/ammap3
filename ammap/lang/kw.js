@@ -1,1 +1,1 @@
-AmCharts.mapTranslations.kw = {"United Kingdom":"Rywvaneth Unys"}
+;AmCharts.mapTranslations.kw = {"United Kingdom":"Rywvaneth Unys"}
