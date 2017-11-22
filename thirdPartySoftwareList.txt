@@ -1,0 +1,59 @@
+*********************************************************************************
+Third party software used:
+
+Code optimization made using Closure Compiling service:
+http://closure-compiler.appspot.com/home
+
+some icons from: http://raphaeljs.com/icons/
+
+Libraries used for exporting:
+
+    filesaver: https://github.com/eligrey/FileSaver.js/
+    https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md
+
+    blobjs: https://github.com/eligrey/Blob.js/
+    https://github.com/eligrey/Blob.js/blob/master/LICENSE.md
+
+    fabricjs: https://github.com/kangax/fabric.js
+    https://github.com/kangax/fabric.js/blob/master/LICENSE
+
+    jszip: https://github.com/Stuk/jszip
+    https://github.com/Stuk/jszip/blob/master/LICENSE.markdown
+
+    pdfmake: https://github.com/bpampuch/pdfmake
+    https://github.com/bpampuch/pdfmake/blob/master/LICENSE
+
+    SheetJS.js: https://github.com/SheetJS/js-xlsx
+    https://github.com/SheetJS/js-xlsx/blob/master/LICENSE
+
+*********************************************************************************
+
+Map projection calculation code taken and adopted from d3 library, all the source
+is in MapUtils.js file.
+
+Copyright (c) 2010-2015, Michael Bostock
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* The name Michael Bostock may not be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL MICHAEL BOSTOCK BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
