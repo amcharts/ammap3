@@ -1,6 +1,6 @@
 {
   "name": "ammap3",
-  "version": "3.21.10",
+  "version": "3.21.11",
   "description": "JavaScript Maps V3",
   "main": "ammap/ammap.js",
   "repository": {
