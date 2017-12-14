@@ -1,6 +1,6 @@
-// (c) ammap.com | SVG (in JSON format) map of Suriname - Low
+// (c) ammap.com | SVG (in JSON format) map of Suriname - High
 // areas: {id:"SR-WA"},{id:"SR-SA"},{id:"SR-PM"},{id:"SR-CR"},{id:"SR-CM"},{id:"SR-SI"},{id:"SR-PR"},{id:"SR-MA"},{id:"SR-BR"},{id:"SR-NI"}
-AmCharts.maps.surinameLow={
+AmCharts.maps.surinameHigh={
 	"svg": {
 		"defs": {
 			"amcharts:ammap": {
