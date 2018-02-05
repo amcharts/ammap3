@@ -15,7 +15,7 @@ support staff, so your questions might take longer to respond to here.
 ### Using npm
 
 ```
-npm install amcharts/ammap3
+npm install ammap3
 ```
 
 ### Using bower
