@@ -1,4 +1,4 @@
-d// (c) ammap.com | SVG (in JSON format) map of Jersey - Low
+// (c) ammap.com | SVG (in JSON format) map of Jersey - Low
 // areas: {id:"JE-JE"}
 AmCharts.maps.jerseyLow={
 	"svg": {
