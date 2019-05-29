@@ -6,7 +6,7 @@ AmCharts.maps.moroccoWesternSaharaHigh={
 			"amcharts:ammap": {
 				"projection":"mercator",
 				"leftLongitude":"-17.106650",
-				"topLatitude":"35922390",
+				"topLatitude":"35.922390",
 				"rightLongitude":"-0.995761",
 				"bottomLatitude":"20.768035"
 			}

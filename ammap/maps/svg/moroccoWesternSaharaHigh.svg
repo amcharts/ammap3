@@ -13,7 +13,7 @@
 			}
 		</style>
 
-		<amcharts:ammap projection="mercator" leftLongitude="-17.106650" topLatitude="35922390" rightLongitude="-0.995761" bottomLatitude="20.768035"></amcharts:ammap>
+		<amcharts:ammap projection="mercator" leftLongitude="-17.106650" topLatitude="35.922390" rightLongitude="-0.995761" bottomLatitude="20.768035"></amcharts:ammap>
 
 		<!-- All areas are listed in the line below. You can use this list in your script. -->
 		<!--{id:"MA-BOD"},{id:"MA-ESM"},{id:"MA-LAA"},{id:"MA-16"},{id:"MA-01"},{id:"MA-02"},{id:"MA-03"},{id:"MA-04"},{id:"MA-05"},{id:"MA-06"},{id:"MA-07"},{id:"MA-08"},{id:"MA-09"},{id:"MA-10"},{id:"MA-11"},{id:"MA-12"},{id:"MA-13"},{id:"MA-14"},{id:"MA-15"}-->
